@@ -1,0 +1,215 @@
+<html>
+<head>  
+<title>Contact Form</title>
+<style>
+
+.navbar{
+          height:90px;
+          width:98.8%;
+          background-color:#0A0A0A;
+          color:white;
+          position:absolute;
+          display:flex;
+          flex-direction:row;
+           justify-content:space-between;
+      
+          }
+.gym1{ 
+         display:flex;
+           
+           }
+.navlogo{
+           height:30px;
+           width:30px;
+           background-image:url("my-website/download (1).jpg");
+           background-repeat:no-repeat;
+           background-size:contain;
+           position:relative;
+           top:22px;
+           left:6px;
+           }
+.gym-name{
+          font-size:24px;
+          font-weight:700;
+           margin-top:22px;
+           margin-left:7px;
+           color:white;
+          }
+.gym-name span{
+            color:#f8d8e8;
+ }
+.navtext{
+          
+         width:fit-content;
+          height:35px;
+          margin-top:26px;
+           display:flex;
+          flex-direction:row;
+           justify-content:space-between;
+
+           }
+.navtext a{
+           
+           font-size:20px;
+           text-decoration:none;
+            color:#ddd;
+             margin: 0 18px;
+ }
+.navtext1 button{
+                   height:40px;
+                    width:130px;
+                    cursor:pointer;
+                    border-radius:25px;
+                    font-size:15px;
+                    font-weight:900;
+                    background:linear-gradient(45deg,#FF6A00,#FFB800);
+                    color:white;
+                    position:relative;
+                    top:20;
+                    right:10;
+                    border:none;
+                    transition:0.3s;
+
+}
+.navtext1 button:hover{
+                         transform:scale(1.05);
+                         box-shadow: 0 0 15px rgba(255,184.0,0,0.5);}
+.border{
+          border:2px solid transparent;
+        }
+.border:hover{
+               border-bottom:2px solid #FFB800;
+               font-size:21px;
+               font-weight:800;
+              color:#FFB800;
+
+              }
+
+    body{
+           background-color:#0A0A0A;    }
+
+    .contact-container{
+      background:#fff;
+      padding:30px;
+      width:350px;
+      border-radius:12px;
+      box-shadow:0 10px 25px rgba(0,0,0,0.2);
+      position:relative;
+      top:7rem;
+      left:30rem;
+    }
+
+    .contact-container h2{
+      text-align:center;
+      margin-bottom:20px;
+      color:#333;
+    }
+
+    .input-box{
+      margin-bottom:15px;
+    }
+
+    .input-box input,
+    .input-box textarea{
+      width:100%;
+      padding:12px;
+      border:1px solid #ccc;
+      border-radius:8px;
+      outline:none;
+      transition:0.3s;
+    }
+
+    .input-box input:focus,
+    .input-box textarea:focus{
+      border-color:#4facfe;
+      box-shadow:0 0 8px rgba(79,172,254,0.5);
+    }
+
+    .input-box textarea{
+      resize:none;
+      height:120px;
+    }
+
+    button{
+      width:100%;
+      padding:12px;
+      border:none;
+      border-radius:8px;
+      background:#4facfe;
+      color:white;
+      font-size:16px;
+      cursor:pointer;
+      transition:0.3s;
+    }
+
+    button:hover{
+      background:#007bff;
+    }
+
+    .message{
+      text-align:center;
+      margin-top:15px;
+      color:green;
+      font-weight:bold;
+    }
+  </style>
+</head>
+<body>
+<header>
+<div class="navbar">
+<div class="gym1">
+<div class="navlogo"></div>
+<div class="gym-name">5D <Span> FITNESS </span></div>
+</div>
+<div class="navtext"> 
+<a href="index.html" class="a1 border"> Home</a>
+<a href="services.html" class="a1 border"> Services</a>
+<a href="about-us.html" class="a1 border">About-us</a>
+<a href="plans.html" class="a1 border">Plans</a>
+<a href="reviews.html" class="a1 border">Review</a>
+
+</div>
+<div class="navtext1">
+<a href="contact_form.html">
+<button> Contact us </button></a>
+<a href="new1.html"><button> Check-BMI </button></a></div></div></div>
+</header>
+  <div class="contact-container">
+    <h2>Contact Us</h2>
+
+    <form id="contactForm">
+      <div class="input-box">
+        <input type="text" id="name" placeholder="Your Name" required>
+      </div>
+
+      <div class="input-box">
+        <input type="email" id="email" placeholder="Your Email" required>
+      </div>
+
+      <div class="input-box">
+        <textarea id="message" placeholder="Your Message" required></textarea>
+      </div>
+
+      <button type="submit">Send Message</button>
+
+      <div class="message" id="successMessage"></div>
+    </form>
+  </div>
+
+  <script>
+    const form = document.getElementById("contactForm");
+    const successMessage = document.getElementById("successMessage");
+
+    form.addEventListener("submit", function(e){
+      e.preventDefault();
+
+      successMessage.textContent = "Message Sent Successfully!";
+
+      form.reset();
+
+    
+    });
+  </script>
+
+</body>
+</html>

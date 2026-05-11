@@ -1,0 +1,234 @@
+<html>
+<head>
+<title> GYM AND FITNESS WEBSITE </title>
+<style>
+.navbar{
+          height:90px;
+          width:98.8%;
+          background-color:#0A0A0A;
+          color:white;
+          position:absolute;
+          display:flex;
+          flex-direction:row;
+           justify-content:space-between;
+      
+          }
+.gym1{ 
+         display:flex;
+           
+           }
+.navlogo{
+           height:30px;
+           width:30px;
+           background-image:url("my-website/download (1).jpg");
+           background-repeat:no-repeat;
+           background-size:contain;
+           position:relative;
+           top:22px;
+           left:6px;
+           }
+.gym-name{
+          font-size:24px;
+          font-weight:700;
+           margin-top:22px;
+           margin-left:7px;
+           color:white;
+          }
+.gym-name span{
+            color:#f8d8e8;
+ }
+.navtext{
+          
+         width:fit-content;
+          height:35px;
+          margin-top:26px;
+           display:flex;
+          flex-direction:row;
+           justify-content:space-between;
+
+           }
+.navtext a{
+           
+           font-size:20px;
+           text-decoration:none;
+            color:#ddd;
+             margin: 0 18px;
+ }
+.navtext1 button{
+                   height:40px;
+                    width:130px;
+                    cursor:pointer;
+                    border-radius:25px;
+                    font-size:15px;
+                    font-weight:900;
+                    background:linear-gradient(45deg,#FF6A00,#FFB800);
+                    color:white;
+                    position:relative;
+                    top:20;
+                    right:10;
+                    border:none;
+                    transition:0.3s;
+
+}
+.navtext1 button:hover{
+                         transform:scale(1.05);
+                         box-shadow: 0 0 15px rgba(255,184.0,0,0.5);}
+.border{
+          border:2px solid transparent;
+        }
+.border:hover{
+               border-bottom:2px solid #FFB800;
+               font-size:21px;
+               font-weight:800;
+              color:#FFB800;
+
+              }
+body{
+      background-color:#0A0A0A;
+     
+      
+
+ }
+.container {height:350px;
+      width: 350px;
+      background: white;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+      text-align: center;
+      position:relative;
+      top:7rem;
+      left:30rem;
+    }
+
+    .container h1 {
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    .input-group {
+      margin-bottom: 15px;
+      text-align: left;
+    }
+
+    .input-group label {
+      display: block;
+      margin-bottom: 5px;
+      color: #555;
+      font-weight: bold;
+    }
+
+    .input-group input {
+      width: 100%;
+      padding: 10px;
+      border: 2px solid #ddd;
+      border-radius: 8px;
+      font-size: 16px;
+      transition: 0.3s;
+    }
+
+   
+
+    button {
+      width: 100%;
+      padding: 12px;
+      border: none;
+      border-radius: 8px;
+      background: #4facfe;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background: #00c6fb;
+    }
+
+    .result {
+      margin-top: 20px;
+      font-size: 18px;
+      font-weight: bold;
+      color: #333;
+    }
+
+    .status {
+      margin-top: 10px;
+      font-size: 16px;
+      color: #666;
+}
+
+</style>
+</head>
+<body>
+<header>
+<div class="navbar">
+<div class="gym1">
+<div class="navlogo"></div>
+<div class="gym-name">5D <Span> FITNESS </span></div>
+</div>
+<div class="navtext"> 
+<a href="index.html" class="a1 border"> Home</a>
+<a href="services.html" class="a1 border"> Services</a>
+<a href="about-us.html" class="a1 border">About-us</a>
+<a href="plans.html" class="a1 border">Plans</a>
+<a href="reviews.html" class="a1 border">Review</a>
+
+</div>
+<div class="navtext1">
+<a href="contact_form.html">
+<button> Contact us </button></a>
+<a href="new1.html"><button> Check-BMI </button></a>
+</div></div></div>
+</header>
+<div class="container">
+    <h1>BMI Calculator</h1>
+
+    <div class="input-group">
+      <label for="weight">Weight (kg)</label>
+      <input type="number" id="weight" placeholder="Enter weight">
+    </div>
+
+    <div class="input-group">
+      <label for="height">Height (cm)</label>
+      <input type="number" id="height" placeholder="Enter height">
+    </div>
+
+    <button onclick="calculateBMI()">Calculate BMI</button>
+
+    <div class="result" id="result"></div>
+    <div class="status" id="status"></div>
+  </div>
+
+  <script>
+    function calculateBMI() {
+      const weight = document.getElementById("weight").value;
+      const heightCm = document.getElementById("height").value;
+
+      if (weight === "" || heightCm === "") {
+        document.getElementById("result").innerText = "";
+        document.getElementById("status").innerText = "";
+        return;
+      }
+
+      const heightM = heightCm / 100;
+      const bmi = (weight / (heightM * heightM)).toFixed(2);
+
+      let status = "";
+
+      if (bmi < 18.5) {
+        status = "Underweight";
+      } else if (bmi >= 18.5 && bmi < 24.9) {
+        status = "Normal weight";
+      } else if (bmi >= 25 && bmi < 29.9) {
+        status = "Overweight";
+      } else {
+        status = "Obese";
+      }
+
+      document.getElementById("result").innerText = `Your BMI: ${bmi}`;
+      document.getElementById("status").innerText = `Status: ${status}`;
+    }
+  </script>
+</body>
+</html>
